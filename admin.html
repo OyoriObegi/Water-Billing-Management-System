@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Management</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="admin.css">
+</head>
+<body>
+	<h1>User Management</h1>
+	<table>
+		<tr>
+			<th>Username</th>
+			<th>Full Name</th>
+			<th>Email</th>
+			<th>Role</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+			<td>john_doe</td>
+			<td>John Doe</td>
+			<td>john.doe@example.com</td>
+			<td>
+				<select name="role">
+					<option value="admin">Admin</option>
+					<option value="user" selected>User</option>
+				</select>
+			</td>
+			<td>
+				<button>Edit</button>
+				<button>Delete</button>
+			</td>
+		</tr>
+		<tr>
+			<td>jane_doe</td>
+			<td>Jane Doe</td>
+			<td>jane.doe@example.com</td>
+			<td>
+				<select name="role">
+					<option value="admin" selected>Admin</option>
+					<option value="user">User</option>
+				</select>
+			</td>
+			<td>
+				<button>Edit</button>
+				<button>Delete</button>
+			</td>
+		</tr>
+	</table>
+	<button>Add User</button>
+</body>
+</html>
