@@ -1,0 +1,63 @@
+/* Style for the page header */
+header {
+    background-color: #185ca5;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+	text-align: center;
+}
+  /* Style for the report section */
+  section {
+    margin: 20px auto;
+    width: 80%;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #1c5fa8;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style for the pagination links */
+  .pagination {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+  }
+  
+  .pagination a.active {
+    background-color: #007bffe1;
+    color: white;
+    border: 1px solid hsl(208, 73%, 41%);
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+  
