@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Make a Payment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payments.css">
+  </head>
+  <body>
+    <h1>Make a Payment</h1>
+    
+    <form id="paymentForm" action="" method="POST">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount"><br><br>
+      
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone"><br><br>
+      
+      <input type="button" value="Pay with MPESA" onclick="makePayment()">
+    </form>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      function makePayment() {
+        // Get the amount and phone number from the form
+        var amount = document.getElementById("amount").value;
+        var phone = document.getElementById("phone").value;
+        
+        // Make an AJAX call to the server to initiate the payment process
+        $.ajax({
+          url: "mpesa_payment.php",
+          type: "POST",
+          data: { amount: amount, phone: phone },
+          success: function(response) {
+            // If the payment process was initiated successfully, redirect the user to the MPESA payment page
+            window.location.href = response;
+          },
+          error: function(xhr, status, error) {
+            // If an error occurred, display an error message
+            alert("An error occurred while processing your payment: " + error);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

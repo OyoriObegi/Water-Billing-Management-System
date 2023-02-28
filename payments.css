@@ -1,0 +1,53 @@
+/* Center the content on the page */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style the form and input fields */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 50px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="number"], input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Style the submit button */
+  input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Style the heading */
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2em;
+  }
+  

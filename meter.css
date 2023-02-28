@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #meter-reading {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #meter-image {
+    margin-top: 20px;
+    display: block;
+  }
+  
+  #submit-button {
+    margin-top: 20px;
+  }
+/* Meter Reading Page */
+#camera-container {
+    position: relative;
+  }
+  
+  #video {
+    width: 100%;
+  }
+  
+  #startbutton {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+    

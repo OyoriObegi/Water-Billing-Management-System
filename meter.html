@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meter Reading Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meter.css">
+  </head>
+  <body>
+    <div class="container">
+        <h2>Meter Reading</h2>
+        <div id="camera-container">
+        <video id="video">Video stream not available.</video>
+        <button id="startbutton">Take photo</button>
+        </div>
+        <canvas id="canvas"></canvas>
+        <form>
+        <input type="hidden" id="meter-reading" name="meter-reading">
+        <button type="submit" id="submit-reading">Submit Reading</button>
+        </form>
+        </div>
+    <script src="meter.js"></script>
+  </body>
+</html>

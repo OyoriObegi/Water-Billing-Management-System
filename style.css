@@ -1,0 +1,90 @@
+/* Water theme CSS */
+body {
+	background-color: #0077be; /* blue */
+  }
+  
+  header {
+	background-color: #66c2ff; /* light blue */
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+  }
+  
+  h1 {
+	font-size: 4em;
+	color: #fff; /* white */
+  }
+  
+  nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #66c2ff; /* light blue */
+	text-align: center;
+  }
+  
+  nav li {
+	display: inline-block;
+	margin-right: 10px;
+  }
+  
+  nav a {
+	display: block;
+	padding: 10px;
+	color: #fff; /* white */
+	text-decoration: none;
+  }
+  
+  nav a:hover {
+	background-color: #b3e5fc; /* light blue on hover */
+  }
+  
+  section {
+	background-color: #fff; /* white */
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* box shadow effect */
+  }
+  
+  h2 {
+	font-size: 2em;
+	color: #0077be; /* blue */
+	margin-bottom: 10px;
+  }
+  
+  a {
+	display: inline-block;
+	background-color: #0077be; /* blue */
+	color: #fff; /* white */
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-top: 10px;
+  }
+  
+  a:hover {
+	background-color: #66c2ff; /* light blue on hover */
+  }
+  
+  footer {
+	background-color: #0077be; /* blue */
+	color: #fff; /* white */
+	text-align: center;
+	padding: 10px;
+  }
+/* Login button CSS */
+nav li.login {
+	margin-left: auto;
+  }
+  nav li.login a {
+	background-color: #0077be; /* blue */
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: background-color 0.3s;
+  }
+  nav li.login a:hover {
+	background-color: #b3e5fc; /* dark blue */
+  }
+	
