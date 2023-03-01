@@ -1,25 +1,3 @@
-<?php
-// connect to the database
-$conn = mysqli_connect("localhost:3306", "root", "", "wbms");
-
-// check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // process the form data and add the user to the database
-    // ...
-}
-
-// query the database for the list of users
-$sql = "SELECT * FROM users";
-$result = mysqli_query($conn, $sql);
-
-// display the table of users
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,47 +10,42 @@ $result = mysqli_query($conn, $sql);
 <body>
 	<h1>User Management</h1>
 	<table>
-		<tr>
-			<th>Username</th>
-			<th>Full Name</th>
-			<th>Email</th>
-			<th>Role</th>
-			<th>Actions</th>
-		</tr>
-		<tr>
-			<td>john_doe</td>
-			<td>John Doe</td>
-			<td>doe@example.com</td>
-			<td>
-				<select name="role">
-					<option value="admin">Admin</option>
-					<option value="user" selected>User</option>
-				</select>
-			</td>
-			<td>
-				<button>Edit</button>
-				<button>Delete</button>
-			</td>
-		</tr>
-		<tr>
-			<td>jane_hoe</td>
-			<td>Jane Hoe</td>
-			<td>jane@example.com</td>
-			<td>
-				<select name="role">
-					<option value="admin" selected>Admin</option>
-					<option value="user">User</option>
-				</select>
-			</td>
-			<td>
-				<button>Edit</button>
-				<button>Delete</button>
-			</td>
-		</tr>
+		
+		<tbody>
+			<?php
+			include ("getdata.php");
+			while ($row = mysqli_fetch_assoc($result)) {
+				echo "<tr>";
+				echo "<td>" . $row["user_id"] . "</td>";
+				echo "<td>" . $row["meter_number"] . "</td>";
+				echo "<td>" . $row["username"] . "</td>";
+				echo "<td>" . $row["fullname"] . "</td>";
+				echo "<td>" . $row["email"] . "</td>";
+				echo "<td>" . $row["password"] . "</td>";
+				echo "<td>" . $row["role"] . "</td>";
+				echo "<td>" . $row["created_on"] . "</td>";
+				echo "<td>";
+				echo "<form method='POST' action='edit_user.php'>";
+				echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
+				echo "<button type='submit'>Edit</button>";
+				echo "</form>";
+				echo "<form method='POST' action='delete_user.php'>";
+				echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
+				echo "<button type='submit'>Delete</button>";
+				echo "</form>";
+				echo "</td>";
+				echo "</tr>";
+			}
+			mysqli_free_result($result);
+			
+			?>
+		</tbody>
 	</table>
 	<button onclick="showForm()">Add User</button>
 	<div id="add-user-form" style="display:none;">
 		<form action="add_user.php" method="POST">
+			<label>Meter Number:</label>
+			<input type="text" name="meter_number"><br>
 			<label>Username:</label>
 			<input type="text" name="username"><br>
 			<label>Full Name:</label>

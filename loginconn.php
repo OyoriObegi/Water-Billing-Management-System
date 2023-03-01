@@ -17,8 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->execute(['username' => $username, 'password' => $password]);
   $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  // If the user exists, redirect to the dashboard page
-  if ($user) {
+  // If the user exists and is an admin, redirect to the admin page
+  if ($user && $user['role'] === 'admin') {
+    header('Location: admin.php');
+    exit();
+  // If the user exists and is a regular user, redirect to the dashboard page
+  } else if ($user && $user['role'] === 'user') {
     header('Location: dashboard.html');
     exit();
   } else {

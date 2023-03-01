@@ -2,13 +2,16 @@ const form = document.getElementById('login-form');
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
+
   const username = form.elements['username'].value;
   const password = form.elements['password'].value;
 
-  // Here you can send an AJAX request to the server for authentication
-  // For this example, we will just log the username and password to the console
-  console.log(`Username: ${username} Password: ${password}`);
+  // Check that both fields have been filled out
+  if (username.trim() === '' || password.trim() === '') {
+    alert('Please enter a valid username and password');
+    return;
+  }
 
-  // Redirect to the dashboard page if login is successful
-  window.location.href = 'dashboard.html';
+  // If validation passes, submit the form
+  form.submit();
 });
