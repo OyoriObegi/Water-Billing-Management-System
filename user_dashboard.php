@@ -37,7 +37,7 @@ $billings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	<nav>
 		<ul>
-			<li><a href="#">Overview</a></li>
+			<li><a href="meter.html">Read Meter</a></li>
 			<li><a href="history.html">Billing History</a></li>
 			<li><a href="payments.html">Make Payment</a></li>
 			<li><a href="logout.php">Logout</a></li>
