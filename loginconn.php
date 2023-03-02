@@ -2,9 +2,9 @@
 // Establish a database connection
 $host = 'localhost: 3306';
 $dbname = 'wbms';
-$username = 'root';
+$dbusername = 'root';
 $password = '';
-$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+$conn = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $password);
 
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,11 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // If the user exists and is an admin, redirect to the admin page
   if ($user && $user['role'] === 'admin') {
-    header('Location: admin.php');
+    header('Location: admin_dashboard.php');
     exit();
   // If the user exists and is a regular user, redirect to the dashboard page
   } else if ($user && $user['role'] === 'user') {
-    header('Location: dashboard.html');
+    header("Location: user_dashboard.php?id={$user['id']}");
+ 
     exit();
   } else {
     // Otherwise, display an error message

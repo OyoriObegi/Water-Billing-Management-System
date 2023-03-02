@@ -23,6 +23,7 @@
 				echo "<td>" . $row["email"] . "</td>";
 				echo "<td>" . $row["password"] . "</td>";
 				echo "<td>" . $row["role"] . "</td>";
+				echo "<td>" . $row["address"] . "</td>";
 				echo "<td>" . $row["created_on"] . "</td>";
 				echo "<td>";
 				echo "<form method='POST' action='edit_user.php'>";
@@ -59,6 +60,9 @@
 				<option value="admin">Admin</option>
 				<option value="user" selected>User</option>
 			</select><br>
+			<label>Address</label>
+			<input type="text" name="address"><br>
+			
 			<input type="submit" value="Add User">
 			<button onclick="hideForm()">Cancel</button>
 		</form>

@@ -15,10 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $address = $_POST['address'];
     $role = $_POST['role'];
 
-    $stmt = mysqli_prepare($conn, "INSERT INTO users (username, meter_number, fullname, email, password, role) VALUES (?, ?, ?, ?, ?, ?)");
-    mysqli_stmt_bind_param($stmt, "ssssss", $username, $meter_number, $fullname, $email, $password, $role);
+    $stmt = mysqli_prepare($conn, "INSERT INTO users (username, meter_number, fullname, email, password, address, role) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt, "sssssss", $username, $meter_number, $fullname, $email, $password, $address, $role);
     mysqli_stmt_execute($stmt);
 
     mysqli_close($conn);
@@ -27,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 ?>
-
 
 <?php
 $servername = "localhost:3306";
@@ -45,13 +45,14 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     echo "<table>";
-    echo "<tr><th>Meter Number</th><th>Username</th><th>Full Name</th><th>Email</th><th>Role</th><th>Created On</th><th>Action</th></tr>";
+    echo "<tr><th>Meter Number</th><th>Username</th><th>Full Name</th><th>Email</th><th>Address</th><th>Role</th><th>Created On</th><th>Action</th></tr>";
     while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" . $row["meter_number"] . "</td>";
         echo "<td>" . $row["username"] . "</td>";
         echo "<td>" . $row["fullname"] . "</td>";
         echo "<td>" . $row["email"] . "</td>";
+        echo "<td>" . $row["address"] . "</td>";
         echo "<td>" . $row["role"] . "</td>";
         echo "<td>" . $row["created_on"] . "</td>";
         echo "<td>";
